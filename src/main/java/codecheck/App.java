@@ -4,7 +4,8 @@ public class App {
 	public static void main(String[] args) {
 		String comand = args[0];
 		String str = args[1];
-		StringBuffer ans = new StringBuffer();
+		StringBuffer sb = new StringBuffer();
+		int a = (int)'A';
 
 		if ("encode".equals(comand)) {
 			str = Integer.toString(Integer.parseInt(str),9);
@@ -12,19 +13,25 @@ public class App {
 
 			for (int i = 0, l = splitStr.length; i < l; i++) {
 				int num = Integer.parseInt(splitStr[i]);
-				int a = (int)'A';
 				String s =String.valueOf((char)(a + num));
-				ans = ans.append(s);
+				sb.append(s);
 			}
+			System.out.println(sb);
+
+		} else if ("decode".equals(comand)) {
+			String[] splitStr = str.split("");
+
+			for (int i = 0, l = splitStr.length; i < l; i++) {
+				String s = splitStr[i];
+				char ch = s.toCharArray()[0];
+				int num = (int)ch - a;
+				sb.append(num);
+			}
+
+			int ans = Integer.parseInt(sb.toString(), 9);
+			System.out.println(ans);
+
+
 		}
-
-		if ("decode".equals(comand)) {
-
-		}
-		System.out.println(ans);
-
-
 	}
-
-
 }
