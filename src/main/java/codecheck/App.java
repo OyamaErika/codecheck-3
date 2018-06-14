@@ -32,6 +32,38 @@ public class App {
 			System.out.println(ans);
 
 
+		} else if ("align".equals(comand)) {
+			String[] splitStr = str.split("");
+
+			for (int i = 0, l = splitStr.length; i < l; i++) {
+				String s = splitStr[i];
+				char ch = s.toCharArray()[0];
+				int num = (int)ch - a;
+				sb.append(num);
+			}
+			int sbLen = Integer.parseInt(sb.substring(0, 1));
+			StringBuffer ans = new StringBuffer();
+			int len = sb.length();
+			if (8 ==sbLen) {
+				len = len++;
+			}
+
+			for (int i = 0; i < len; i++) {
+				ans.append(7);
+			}
+			int aa = Integer.parseInt(sb.toString());
+			int b = Integer.parseInt(ans.toString());
+
+			int intAns = aa + b;
+			String[] splitTr = (String.valueOf(intAns)).split("");
+			StringBuffer buffer = new StringBuffer();
+
+			for (int i = 0, l = splitStr.length; i < l; i++) {
+				int num = Integer.parseInt(splitTr[i]);
+				String s =String.valueOf((char)(a + num));
+				buffer.append(s);
+			}
+			System.out.println(buffer);
 		}
 	}
 }
