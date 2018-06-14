@@ -54,16 +54,22 @@ public class App {
 			int aa = Integer.parseInt(sb.toString());
 			int b = Integer.parseInt(ans.toString());
 
-			int intAns = aa + b;
+			int intAns = b - aa;
 			String[] splitTr = (String.valueOf(intAns)).split("");
 			StringBuffer buffer = new StringBuffer();
 
-			for (int i = 0, l = splitStr.length; i < l; i++) {
+			for (int i = 0, l = splitTr.length; i < l; i++) {
 				int num = Integer.parseInt(splitTr[i]);
 				String s =String.valueOf((char)(a + num));
 				buffer.append(s);
 			}
-			System.out.println(buffer);
+			StringBuffer sysAns = new StringBuffer();
+			for (int i = 0; i < len; i++) {
+				sysAns.append("H");
+			}
+			String sysC = sysAns.toString();
+			String sys = buffer.toString();
+			System.out.println(str + " + " + sys + " = " +  sysC);
 		}
 	}
 }
