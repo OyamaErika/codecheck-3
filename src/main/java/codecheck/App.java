@@ -42,23 +42,20 @@ public class App {
 				sb.append(num);
 			}
 			int sbLen = Integer.parseInt(sb.substring(0, 1));
-			StringBuffer ans = new StringBuffer();
+			StringBuffer buf = new StringBuffer();
 			int len = sb.length();
 			if (8 ==sbLen) {
 				len = len++;
 			}
 
 			for (int i = 0; i < len; i++) {
-				ans.append(7);
+				buf.append(7);
 			}
-			String aa = sb.toString();
-			int ia = Integer.parseInt(aa, 9);
-			String b = ans.toString();
 
-			int ib = Integer.parseInt(b,9);
+			int ia = Integer.parseInt(sb.toString(), 9);
+			int ib = Integer.parseInt(buf.toString(),9);
 
-			int intAns = ib - ia;
-			String aAns = Integer.toString(intAns,9);
+			String aAns = Integer.toString(ib - ia,9);
 
 			String[] splitTr = aAns.split("");
 			StringBuffer buffer = new StringBuffer();
