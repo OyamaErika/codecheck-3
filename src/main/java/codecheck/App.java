@@ -51,11 +51,16 @@ public class App {
 			for (int i = 0; i < len; i++) {
 				ans.append(7);
 			}
-			int aa = Integer.parseInt(sb.toString());
-			int b = Integer.parseInt(ans.toString());
+			String aa = sb.toString();
+			int ia = Integer.parseInt(aa, 9);
+			String b = ans.toString();
 
-			int intAns = b - aa;
-			String[] splitTr = (String.valueOf(intAns)).split("");
+			int ib = Integer.parseInt(b,9);
+
+			int intAns = ib - ia;
+			String aAns = Integer.toString(intAns,9);
+
+			String[] splitTr = aAns.split("");
 			StringBuffer buffer = new StringBuffer();
 
 			for (int i = 0, l = splitTr.length; i < l; i++) {
@@ -72,4 +77,5 @@ public class App {
 			System.out.println(str + " + " + sys + " = " +  sysC);
 		}
 	}
+
 }
